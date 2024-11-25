@@ -1,0 +1,15 @@
+#files conteining enviroments
+.env
+venv/
+#Byte-compilated
+__pycache__
+*.py[cod]
+*$py.class
+#logs
+logs
+*.log
+#VSCODE
+.vscode
+.cache
+#pytest
+.pytest_cache
