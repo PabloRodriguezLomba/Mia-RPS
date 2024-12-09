@@ -10,28 +10,36 @@ class GameAction(IntEnum):
     Scissors = 2
 
 def assess_game(user_action, computer_action):
+    victory = 0
     if user_action == computer_action:
         print(f"User and computer")        
-
+        victory = 1
 
     elif user_action == GameAction.Rock:
         if computer_action == GameAction.Scissors:
             print("Rock smashes scissors. You won!")
+            victory = 0
         else:
             print("Paper covers rock, You lost!")
+            victory = 2
 
     elif user_action == GameAction.Paper:
         if computer_action == GameAction.Rock:
             print("Paper covers rock, You won!")
+            victory = 0
         else:
             print("Scissors cut paper, You lost!")
+            victory = 2
 
     elif user_action == GameAction.Scissors:
         if computer_action == GameAction.Paper:
             print("Scissors cut paper, You won!")
+            victory = 0
         else:
             print("Rock smashes scissors, You lost!")
+            victory = 2
 
+    return victory
         
 
 def get_computer_action():
@@ -83,7 +91,7 @@ def main():
 
         computer_action = get_computer_action()
         assess_game(user_action, computer_action)
-
+        
 
         if not play_another_round():
             break
