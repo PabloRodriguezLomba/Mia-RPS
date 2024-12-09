@@ -1,6 +1,7 @@
-import random
+from random import randint
 from enum import IntEnum
     
+past_actions = []
 
 class GameAction(IntEnum):
 
@@ -31,13 +32,29 @@ def assess_game(user_action, computer_action):
         else:
             print("Rock smashes scissors, You lost!")
 
+        
+
 def get_computer_action():
     
-    pass
-
-def calculate_new_move(past_actions):
-    if len(past_actions) == 0:
+    len_past_actions = len(past_actions)
+    if len_past_actions == 0:
         return GameAction.Scissors
+    else :
+        if past_actions[len_past_actions].get("Victory") == 0:
+            return past_actions[len_past_actions].get("rival_action")
+        else:    
+            if past_actions[len_past_actions].get("Victory") == 2:
+                next_action = past_actions[len_past_actions].get("computer_action") - 1
+                if next_action < 0:
+                    next_action = 2
+                return next_action    
+            else:
+                return randint(0,len(GameAction) - 1)
+    
+
+
+   
+
 
 
 
@@ -55,7 +72,7 @@ def play_another_round():
     return another_round.lower() == 'y'
 
 def main():
-
+    current_play = {}
     while True:
         try:
             user_action = get_user_action()
@@ -66,6 +83,7 @@ def main():
 
         computer_action = get_computer_action()
         assess_game(user_action, computer_action)
+
 
         if not play_another_round():
             break
