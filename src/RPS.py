@@ -90,9 +90,11 @@ def main():
             continue
 
         computer_action = get_computer_action()
-        assess_game(user_action, computer_action)
-        
-
+        victory_status = assess_game(user_action, computer_action)
+        current_play["Victory"] = victory_status
+        current_play["rival_action"] = user_action
+        current_play["computer_action"] = computer_action
+        past_actions.append(current_play)
         if not play_another_round():
             break
 
