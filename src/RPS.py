@@ -12,7 +12,7 @@ class GameAction(IntEnum):
 def assess_game(user_action, computer_action):
     victory = 0
     if user_action == computer_action:
-        print(f"User and computer")        
+        print(f"Empate")        
         victory = 1
 
     elif user_action == GameAction.Rock:
@@ -44,15 +44,16 @@ def assess_game(user_action, computer_action):
 
 def get_computer_action():
     
-    len_past_actions = len(past_actions)
+    len_past_actions = len(past_actions) 
     if len_past_actions == 0:
         return GameAction.Scissors
     else :
-        if past_actions[len_past_actions].get("Victory") == 0:
-            return past_actions[len_past_actions].get("rival_action")
+        if past_actions[len_past_actions-1].get("Victory") == 0:
+            return past_actions[len_past_actions-1].get("rival_action")
         else:    
-            if past_actions[len_past_actions].get("Victory") == 2:
-                next_action = past_actions[len_past_actions].get("computer_action") - 1
+            if past_actions[len_past_actions-1].get("Victory") == 2:
+                next_action = past_actions[len_past_actions-1].get("computer_action")
+                next_action -= 1
                 if next_action < 0:
                     next_action = 2
                 return next_action    
