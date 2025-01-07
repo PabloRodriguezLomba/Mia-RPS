@@ -1,16 +1,29 @@
 # Mia-RPS
 
-# Contornos da tarefa
 
-| Contornos de tarefas | Observable | Axentes | Determinista | Episodico | Estatico | Discreto | Coñecido |
+## Contornos da tarefa
+
+| Contornos da tarefas | Observable | Axentes | Determinista | Episodico | Estatico | Discreto | Coñecido |
 | :----: | :----: | :----: | :----: | :----: | :----: | :----: | :----: |
 | RPS | Partially | Single | Non Deterministic | Sequential | static | Discrete | Know |
 
-Observable, el modelo es partial pues no es consciente de las decisiones del jugador y por tanto no puede observar el estado completo del entorno
-Axentes , el modelo es Single pues no existe otro ajente que interactua con el entorno
-Determinista, este es Non Deterministic pues la decision del jugador es aleatoria y no se puede predecir sus decisiones exactamente , aparte de esto no es Stochastic pues no se lidian con probabilidades.
+Observable, o modelo e partial pues non e consciente das decisions do xogador e por tanto non pode observar o estado completo do entorno
+
+Axentes , o modelo e Single xa que no existe otro axente que interactuen con o entorno
+
+Determinista, este e Non Deterministic devido a que a decision do xogador e aleatoria y non se pode predecir a suas decisiones exactamente , aparte de esto no e Stochastic puoi no se lidia con probabilidades.
+
 Episodico, este modelo es Sequential ya que en nuestra estrategia se tiene en cuenta los resultados de anteriores partidas y es necesario tener encuenta estos resultados para seber quien ganara el juego
-Estatico, el modelo es static porque el modelo no cambia mientras el agente toma su decision y se espera a que este acabe su turno para poder continuar.
-Discreto, es discrete ya que existen finitas posibilidades en el rps
-Coñecido , Simplemente es Know devido a que el agente conoce todas las reglas del entorno
+
+Estatico, e static porque o modelo no cambia mentras o agente toma a su decision e se espera a que este acabe o seu turno para poder continuar.
+
+Discreto, este e discrete xa que existen finitas posibilidades  nun rps
+
+Coñecido , Simplemente es Know devido a que o axente coñece todas as regras do entorno
+
+
+## Estructura do Axente
+
+Decidin utilizar un axende baseado en modelos porque o entorno e parcialmente observable e  creo que e o mais facil de utilizar 
+
 
