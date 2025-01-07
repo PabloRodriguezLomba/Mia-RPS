@@ -53,9 +53,9 @@ def get_computer_action():
         else:    
             if past_actions[len_past_actions-1].get("Victory") == 2:
                 next_action = past_actions[len_past_actions-1].get("computer_action")
-                next_action -= 1
-                if next_action < 0:
-                    next_action = 2
+                next_action += 1
+                if next_action > 2:
+                    next_action = 0
                 return next_action    
             else:
                 return randint(0,len(GameAction) - 1)
